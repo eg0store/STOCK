@@ -9,7 +9,7 @@ module.exports = {
   PRICE: "19.99 ريال",
 
   // رابط الشراء (تيكت أو رابط سيرفر التذاكر)
-  PURCHASE_LINK: "https://cdn.salla.sa/DEZQl/kCij06X2VCZszua8zNn34JSFcf6jusG7mwoluZp9.png", // غيّره لرابط قناة التكت أو رابط الطلب
+  PURCHASE_LINK: "https://i.imgur.com/pxLdMmh.png", // غيّره لرابط قناة التكت أو رابط الطلب
 
   // صورة المنتج (رابط مباشر لصورة)
   PRODUCT_IMAGE: "file:///C:/Users/7moty/Downloads/DDDDDDDDDDDDDD.png",

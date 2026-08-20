@@ -6,24 +6,24 @@ module.exports = {
   PRODUCT_NAME: "نيترو9 قيمنق شهري قفت 🚀",
 
   // السعر
-  PRICE: "15 ج",
+  PRICE: "19.99 ريال",
 
   // رابط الشراء (تيكت أو رابط سيرفر التذاكر)
-  PURCHASE_LINK: "https://discord.com", // غيّره لرابط قناة التكت أو رابط الطلب
+  PURCHASE_LINK: "1419643763915227136", // غيّره لرابط قناة التكت أو رابط الطلب
 
   // صورة المنتج (رابط مباشر لصورة)
   PRODUCT_IMAGE: "https://i.imgur.com/8Km9tLL.png",
 
   // اسم المتجر (يظهر في الفوتر)
-  STORE_NAME: "Skey Store",
+  STORE_NAME: "Kovi Store",
 
   // آيدي روم التذاكر (اللي هيتعمل له منشن تحت الإعلان)
-  TICKET_CHANNEL_ID: "PUT_TICKET_CHANNEL_ID_HERE",
+  TICKET_CHANNEL_ID: "1419643763915227136",
 
   // لون الإيمبد (هيكس كولور)
   EMBED_COLOR: "#B9AFCE",
 
   // آيدي الرول اللي مسموح له يستخدم أمر "متوفر" (عشان محدش يستخدمه غير الإدارة)
   // سيب المصفوفة فاضية [] لو عايز أي حد يقدر يستخدمه (مش منصوح بيه)
-  ALLOWED_ROLE_IDS: ["PUT_ADMIN_ROLE_ID_HERE"],
+  ALLOWED_ROLE_IDS: ["1419640605432221696"],
 };

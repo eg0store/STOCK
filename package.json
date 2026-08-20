@@ -1,0 +1,13 @@
+{
+  "name": "nitro-stock-bot",
+  "version": "1.0.0",
+  "description": "بوت ديسكورد لإعلانات المتجر - يمسح رسالة الإدارة ويبعت إيمبد جاهز",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "discord.js": "^14.14.1",
+    "dotenv": "^16.4.5"
+  }
+}

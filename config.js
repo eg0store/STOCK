@@ -12,7 +12,7 @@ module.exports = {
   PURCHASE_LINK: "1419643763915227136", // غيّره لرابط قناة التكت أو رابط الطلب
 
   // صورة المنتج (رابط مباشر لصورة)
-  PRODUCT_IMAGE: "https://i.imgur.com/8Km9tLL.png",
+  PRODUCT_IMAGE: "file:///C:/Users/7moty/Downloads/DDDDDDDDDDDDDD.png",
 
   // اسم المتجر (يظهر في الفوتر)
   STORE_NAME: "Kovi Store",

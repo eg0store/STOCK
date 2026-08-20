@@ -21,15 +21,19 @@ client.once("ready", () => {
   console.log(`✅ البوت شغال دلوقتي باسم: ${client.user.tag}`);
 });
 
+// كلمات تعتبر "الكمية خلصت"
+const SOLD_OUT_WORDS = ["نفذت", "نفدت", "خلصت", "خلصت الكمية", "نفذت الكمية"];
+
 client.on("messageCreate", async (message) => {
   if (message.author.bot) return;
   if (!message.guild) return;
 
-  // لازم الرسالة تبدأ بكلمة "متوفر"
-  const match = message.content.trim().match(/^متوفر\s+(\d+)/);
-  if (!match) return;
+  const content = message.content.trim();
 
-  const quantity = match[1];
+  const stockMatch = content.match(/^متوفر\s+(\d+)/);
+  const isSoldOut = SOLD_OUT_WORDS.includes(content);
+
+  if (!stockMatch && !isSoldOut) return;
 
   // تحقق من الصلاحية (لو حاططين رولات مسموحة)
   if (config.ALLOWED_ROLE_IDS.length > 0) {
@@ -47,7 +51,27 @@ client.on("messageCreate", async (message) => {
     console.error("مقدرش أمسح الرسالة:", err.message);
   }
 
-  // جهّز الإيمبد
+  const ticketMention = config.TICKET_CHANNEL_ID.includes("PUT_")
+    ? ""
+    : `<#${config.TICKET_CHANNEL_ID}>`;
+
+  if (isSoldOut) {
+    // إيمبد "الكمية خلصت"
+    const soldOutEmbed = new EmbedBuilder()
+      .setColor("#E74C3C")
+      .setTitle("Stock")
+      .setDescription(
+        `**❌ نفذت الكمية من ${config.PRODUCT_NAME}**\n\n` +
+          `تابعنا عشان تعرف أول ما تتوفر الكمية تاني`
+      )
+      .setFooter({ text: config.STORE_NAME });
+
+    await message.channel.send({ embeds: [soldOutEmbed] });
+    return;
+  }
+
+  // إيمبد المتوفر
+  const quantity = stockMatch[1];
   const embed = new EmbedBuilder()
     .setColor(config.EMBED_COLOR)
     .setTitle("Stock")
@@ -58,10 +82,6 @@ client.on("messageCreate", async (message) => {
     )
     .setImage(config.PRODUCT_IMAGE)
     .setFooter({ text: `اشتر الآن قبل نفاد الكمية - ${config.STORE_NAME}` });
-
-  const ticketMention = config.TICKET_CHANNEL_ID.includes("PUT_")
-    ? ""
-    : `<#${config.TICKET_CHANNEL_ID}>`;
 
   await message.channel.send({
     content: ticketMention ? `🎫 للطلب: ${ticketMention}` : undefined,

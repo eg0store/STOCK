@@ -9,7 +9,7 @@ module.exports = {
   PRICE: "19.99 ريال",
 
   // رابط الشراء (تيكت أو رابط سيرفر التذاكر)
-  PURCHASE_LINK: "1419643763915227136", // غيّره لرابط قناة التكت أو رابط الطلب
+  PURCHASE_LINK: "https://discord.com/channels/1281538866238586902/1419643763915227136", // غيّره لرابط قناة التكت أو رابط الطلب
 
   // صورة المنتج (رابط مباشر لصورة)
   PRODUCT_IMAGE: "file:///C:/Users/7moty/Downloads/DDDDDDDDDDDDDD.png",

@@ -62,7 +62,7 @@ client.on("messageCreate", async (message) => {
       .setTitle("Stock")
       .setDescription(
         `**❌ نفذت الكمية من ${config.PRODUCT_NAME}**\n\n` +
-          `تابعنا عشان تعرف أول ما تتوفر الكمية تاني`
+          `تابعنا عشان تعرف أول ما نوفر كميات`
       )
       .setFooter({ text: config.STORE_NAME });
 
